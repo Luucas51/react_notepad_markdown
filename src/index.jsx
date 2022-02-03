@@ -7,21 +7,30 @@ import ViewEachNote from './components/ViewEachNote';
 
 const App = () => {
 
-    const [localStorageUpdated, setLocalStorageUpdated] = useState('');
 
+    /////////////////////////////////////////////////////////////////////
+
+
+    const [localStorageUpdated, setLocalStorageUpdated] = useState('');
     const handleLocalStorageUpdated = (callBackValue) => {
         setLocalStorageUpdated(localStorageUpdated + callBackValue)
     }
 
+
+
+    /////////////////////////////////////////////////////////////////////
+
     const [localStorageRemove, setLocalStorageRemove] = useState('');
-
-
     const handleLocalStorageRemove = (callBackValue)=> {
         setLocalStorageRemove(localStorageRemove + callBackValue)
     }
 
-    const [inputValue, setInputValue] = useState('')
 
+    /////////////////////////////////////////////////////////////////////
+
+
+
+    const [inputValue, setInputValue] = useState('')
     const getInputValue = (input) =>{
         setInputValue(input)
     }
@@ -30,25 +39,41 @@ const App = () => {
     }, [inputValue])
 
 
-    const [inputTitleValue, setInputTitleValue] = useState('');
+    /////////////////////////////////////////////////////////////////////
 
+
+    const [inputTitleValue, setInputTitleValue] = useState('');
     const getInputTitleValue = (input) => {
         setInputTitleValue(input)
     };
-
     useEffect(() =>{
         // console.log(inputTitleValue)
     }, [inputTitleValue])
 
+
+    ///////////////////////////////////////////////////////////////////
+
+
+    const handleNewNote = () => {
+        getInputTitleValue('');
+        getInputValue('');
+    }
+
+
+
+
     return (
         <div className='main-container'>
             <div className="col-left">
-                {/* <button className='btn-new-note' onClick={}>Nouvelle note</button>  */}
+                <div className='view-each-note-btn'>
+                    <button className="btn-new-note" onClick={handleNewNote}>Nouvelle note</button>
+                </div>
                 <ViewEachNote inputTitleValue={inputTitleValue} inputValue={inputValue} handleLocalStorageRemove={handleLocalStorageRemove}/>
             </div>
             <div className="col-right">
-                <NoteDisplay inputValue={inputValue} inputTitleValue={inputTitleValue}/>
-                <MarkdownInput getInputValue={getInputValue} getInputTitleValue={getInputTitleValue} handleLocalStorageUpdated={handleLocalStorageUpdated}/>
+                <NoteDisplay  inputValue={inputValue} inputTitleValue={inputTitleValue}/>
+                
+                <MarkdownInput inputTitleValue={inputTitleValue} inputValue={inputValue} getInputValue={getInputValue} getInputTitleValue={getInputTitleValue} handleLocalStorageUpdated={handleLocalStorageUpdated}/>
             </div>
         </div>
     );

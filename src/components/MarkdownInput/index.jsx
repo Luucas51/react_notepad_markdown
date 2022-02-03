@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react/cjs/react.development';
 
-const MarkdownInput = (props) => {
+const MarkdownInput = ({getInputTitleValue, getInputValue, handleLocalStorageUpdated, inputTitleValue, inputValue, ...props}) => {
 
 
     const [title, setTitle] = useState('')
@@ -10,26 +9,27 @@ const MarkdownInput = (props) => {
 
     const inputChange = (e) => {
         let valueToReturn = e.target.value;
-        props.getInputValue(valueToReturn)
+        getInputValue(valueToReturn)
         setContent(valueToReturn)
     }
 
     const inputTitleChange = (e) => {
         let valueToTitleReturn = e.target.value;
-        props.getInputTitleValue(valueToTitleReturn)
+        getInputTitleValue(valueToTitleReturn)
         setTitle(valueToTitleReturn)
     }
 
     const handleSave = () => {
         localStorage.setItem(title, content)
-        props.handleLocalStorageUpdated(1)
+        handleLocalStorageUpdated(1)
     }
+
 
     return (
         <div className='markdown-container'>
-            <input type='text' className='title-input' placeholder='Titre' onChange={inputTitleChange}/>
-            <textarea type="textarea" placeholder='Tape ta note' className='textarea' onChange={inputChange} />
-            <button className='btn-save' onClick={handleSave}>Save</button>
+            <input type='text' className='title-input' placeholder='Titre' onChange={inputTitleChange} value={inputTitleValue} />
+            <textarea type="textarea" placeholder='Tape ta note' className='textarea' onChange={inputChange} value={inputValue}/>
+            <button className='btn-save' onClick={handleSave} >Save</button>
         </div>
     );
 };

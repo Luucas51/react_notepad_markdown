@@ -12,7 +12,7 @@ const EachNote = ({key, entryTitle, entryBody, handleLocalStorageRemove}) => {
     return (
         <div className='card-note'>
             <div className="title-each-note">{entryTitle}</div>
-            <div className="content-each-note">{entryBody.split(' ').slice(0, 15).join('')}</div>
+            <div className="content-each-note">{entryBody.split(' ').slice(0, 15).join(' ')}</div>
             <button className='remove-note-btn' onClick={removeNote}>Supprimer cette note</button>
         </div>
     );

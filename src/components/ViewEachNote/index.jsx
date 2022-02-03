@@ -13,8 +13,6 @@ const ViewEachNote = ({inputValue, inputTitleValue, handleLocalStorageRemove}) =
 
     return (
         <>
-            <div className='view-each-note-btn'>
-            </div>
             <div className="each-note">
                 {EntriesToDisplay.map((content, index) => {
                         return <EachNote key={index} entryTitle={content.key} entryBody={content.value} handleLocalStorageRemove={handleLocalStorageRemove} />
