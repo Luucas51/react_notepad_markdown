@@ -12,7 +12,7 @@ const App = () => {
         setInputValue(input)
     }
     useEffect(()=>{
-        console.log(inputValue)
+
     }, [inputValue])
 
 
@@ -22,7 +22,7 @@ const App = () => {
         setInputTitleValue(input)
     };
     useEffect(() =>{
-        console.log(inputTitleValue)
+        // console.log(inputTitleValue)
     }, [inputTitleValue])
 
     return (

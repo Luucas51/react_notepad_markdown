@@ -20,12 +20,14 @@ body{
     padding-left: 20px;
     align-items: center;
     padding-right: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    padding-top: 100px;
 }
 
 .note-display-container{
     width: 100vh;
-    height: 65vh;
+    height: 55vh;
+    border: solid 2px red;
     padding: 20px;
     background-color: $color-bg;
     color: white;
@@ -41,10 +43,32 @@ body{
 }
 
 .title-input{
-    height: 40px;
+    height: 70px;
     width: 100%;
     font-size: 20px;
     background-color: $color-bg-input;
     margin-bottom: 20px;
     border: none;
+}
+
+.btn-save{
+    background-color: $color-red;
+    border: none;
+    margin-top: 10px;
+    height: 50px;
+    width: 100%;
+    border: solid 2px $color-red;
+    font-size: 25px;
+}
+
+.btn-save:hover{
+    background-color: transparent;
+    color: white;
+    border: solid 2px $color-red;
+    cursor: pointer;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
 }
