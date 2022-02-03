@@ -1,0 +1,50 @@
+$color-bg: #332F2C;
+$color-bg-input: #8F8F8F;
+$color-red: #B32821;
+
+body{
+    background-color: $color-red;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.markdown-container{
+    width: 100vh;
+    height: 27vh;
+    background-color: $color-bg;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    align-items: center;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.note-display-container{
+    width: 100vh;
+    height: 65vh;
+    padding: 20px;
+    background-color: $color-bg;
+    color: white;
+}
+
+.textarea{
+    height: 20vh;
+    width: 100%;
+    font-size: 20px;
+    background-color: $color-bg-input;
+    border: none;
+
+}
+
+.title-input{
+    height: 40px;
+    width: 100%;
+    font-size: 20px;
+    background-color: $color-bg-input;
+    margin-bottom: 20px;
+    border: none;
+}
