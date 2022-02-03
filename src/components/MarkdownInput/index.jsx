@@ -22,11 +22,7 @@ const MarkdownInput = (props) => {
 
     const handleSave = () => {
         localStorage.setItem(title, content)
-        localStorage.setItem(content, title)
-        let getInfoContent = localStorage.getItem(title)
-        let getInfoTitle = localStorage.getItem(content)
-        console.log(getInfoTitle)
-        console.log(getInfoContent)
+        props.handleLocalStorageUpdated(1)
     }
 
     return (

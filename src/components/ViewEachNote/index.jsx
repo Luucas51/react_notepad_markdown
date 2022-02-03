@@ -1,7 +1,7 @@
 import React from 'react';
 import EachNote from '../EachNote';
 
-const ViewEachNote = ({inputValue, inputTitleValue}) => {
+const ViewEachNote = ({inputValue, inputTitleValue, handleLocalStorageRemove}) => {
 
 
     const EntriesToDisplay = [];
@@ -10,14 +10,14 @@ const ViewEachNote = ({inputValue, inputTitleValue}) => {
     }
 
 
+
     return (
         <>
             <div className='view-each-note-btn'>
-                <button className='btn-new-note'>Nouvelle note</button>
             </div>
             <div className="each-note">
                 {EntriesToDisplay.map((content, index) => {
-                        return <EachNote key={index} entryTitle={content.key} entryBody={content.value} />
+                        return <EachNote key={index} entryTitle={content.key} entryBody={content.value} handleLocalStorageRemove={handleLocalStorageRemove} />
                 })}
             </div>
         </>
