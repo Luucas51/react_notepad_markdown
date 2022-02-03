@@ -3,6 +3,7 @@ import reactDom from 'react-dom';
 import MarkdownInput from './MarkdownInput';
 import NoteDisplay from './NoteDisplay';
 import './styles/index.scss'
+import ViewEachNote from './ViewEachNote';
 
 const App = () => {
 
@@ -27,8 +28,14 @@ const App = () => {
 
     return (
         <div className='main-container'>
-            <NoteDisplay inputValue={inputValue} inputTitleValue={inputTitleValue}/>
-            <MarkdownInput getInputValue={getInputValue} getInputTitleValue={getInputTitleValue}/>
+            <div className="col-left">
+                
+                <ViewEachNote inputTitleValue={inputTitleValue} inputValue={inputValue}/>
+            </div>
+            <div className="col-right">
+                <NoteDisplay inputValue={inputValue} inputTitleValue={inputTitleValue}/>
+                <MarkdownInput getInputValue={getInputValue} getInputTitleValue={getInputTitleValue}/>
+            </div>
         </div>
     );
 };
